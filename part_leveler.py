@@ -30,7 +30,8 @@ for filename in os.listdir(folder_name):
 
         #import stl and assign properties
         #bpy.ops.import_mesh.stl(filepath=argv[0])
-        bpy.ops.import_mesh.stl(filepath = folder_name + "\\" + filename)
+        bpy.ops.import_mesh.stl(filepath = folder_name + '/' + filename) #unix
+        #bpy.ops.import_mesh.stl(filepath = folder_name + "\\" + filename) #windows
         bpy.ops.object.origin_set(type='ORIGIN_CENTER_OF_VOLUME')
         bpy.context.object.location[0] = 0
         bpy.context.object.location[1] = 0
@@ -40,7 +41,8 @@ for filename in os.listdir(folder_name):
         bpy.context.scene.frame_current = 249
         bpy.ops.ptcache.bake_all(bake=False)
         #bpy.ops.export_mesh.stl(filepath = argv[0], use_selection = True)
-        bpy.ops.export_mesh.stl(filepath = folder_name + "\\" + filename, use_selection = True)
+        bpy.ops.export_mesh.stl(filepath = folder_name + "/" + filename, use_selection = True) #unix
+        #bpy.ops.export_mesh.stl(filepath = folder_name + "\\" + filename, use_selection = True) #windows
         bpy.ops.object.select_all(action='SELECT')
         bpy.ops.object.delete(use_global=False)
 print("Finished leveling {} parts.".format(counter))
