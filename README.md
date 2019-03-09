@@ -5,19 +5,18 @@ The part will settle to about what you'd expect it to look like if it was placed
 
 It works particularly well for planar things (see below before/after screenshot).
 
-usage:
-unix:
-\<path to blender.exe\> -b -P \<path to part_leveler.py\> -- \<path to directory\> --unix
+## usage:
 
-windows:
-\<path to blender\> -b -P \<path to part_leveler.py\> -- \<path to directory\> --windows
+###unix:
+    \<path to blender.exe\> -b -P \<path to part_leveler.py\> -- \<path to directory\> --unix
 
-example:
-./blender -b -P ~/projects/partleveler/part_leveler.py -- ~/stl_dir/ --unix
+###windows:
+    \<path to blender\> -b -P \<path to part_leveler.py\> -- \<path to directory\> --windows
+
+##example:
+    ./blender -b -P ~/projects/partleveler/part_leveler.py -- ~/stl_dir/ --unix
 
 The dashes are important, it indicates to blender to ignore past there and let the python script handle that input instead.
-
-Comment out lines labeled unix or windows (lines 33/34 and lines 44/45) to toggle between directory styles.
 
 ![before and after](ugly_but_functional.png)
 
