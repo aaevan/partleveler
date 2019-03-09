@@ -1,9 +1,9 @@
 # partleveler
-A script to settle a directory STL files (of arbitrary shape) using Blender physics, probably reducing the volume of support structure needed.
+A script to settle a directory STL files (of arbitrary shape) using Blender physics. If the part starts oriented close to how you'll print it, the script will likely reduce the volume of support structure needed. Before running the script, you will need to position the object above the origin with the relevant surface pointing roughly down and re-export the .stl.
 
-The part will settle to about what you'd expect it to look like if it was placed on a table.
+A stationary plane is created which the object is allowed to fall onto. The part will settle into a translation and rotation as if it was dropped onto a table and allowed to balance itself.
 
-It works particularly well for planar things (see below before/after screenshot).
+The script works particularly well for planar things (see below before/after screenshot). The script also assumes the entire .stl starts above the origin. If your part is far from the origin after the script runs, it has likely started below the stationary plane and fallen into the void below (and exported from there).
 
 ## usage:
 
@@ -16,9 +16,9 @@ It works particularly well for planar things (see below before/after screenshot)
 ### example:
     ./blender -b -P ~/projects/partleveler/part_leveler.py -- ~/stl_dir/ --unix
 
-The dashes are important, it indicates to blender to ignore past there and let the python script handle that input instead.
+The dashes are important. Past there, arguments are fed to the python script instead.
 
-![before and after](ugly_but_functional.png)
+![](ugly_but_functional.png)
 
 Let me know if this is useful for you. I originally figured out this process for ridiculously wasteful wax-support style printers that don't even care if your part is touching the print bed. 
 
