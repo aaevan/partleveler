@@ -41,6 +41,8 @@ for filename in os.listdir(folder_name):
         bpy.ops.object.origin_set(type='ORIGIN_CENTER_OF_VOLUME')
         bpy.context.object.location[0] = 0
         bpy.context.object.location[1] = 0
+        z_size = int(bpy.context.object.dimensions[2])
+        bpy.context.object.location[2] = (z_size / 2) + 2
         bpy.ops.rigidbody.object_add()
         bpy.context.object.rigid_body.mass = 1000
 
