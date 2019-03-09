@@ -8,10 +8,10 @@ It works particularly well for planar things (see below before/after screenshot)
 ## usage:
 
 ### unix:
-    \<path to blender.exe\> -b -P \<path to part_leveler.py\> -- \<path to directory\> --unix
+    <path to blender.exe> -b -P <path to part_leveler.py> -- <path to directory> --unix
 
 ### windows:
-    \<path to blender\> -b -P \<path to part_leveler.py\> -- \<path to directory\> --windows
+    <path to blender> -b -P <path to part_leveler.py> -- <path to directory> --windows
 
 ### example:
     ./blender -b -P ~/projects/partleveler/part_leveler.py -- ~/stl_dir/ --unix
