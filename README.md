@@ -7,13 +7,13 @@ It works particularly well for planar things (see below before/after screenshot)
 
 ## usage:
 
-###unix:
+### unix:
     \<path to blender.exe\> -b -P \<path to part_leveler.py\> -- \<path to directory\> --unix
 
-###windows:
+### windows:
     \<path to blender\> -b -P \<path to part_leveler.py\> -- \<path to directory\> --windows
 
-##example:
+### example:
     ./blender -b -P ~/projects/partleveler/part_leveler.py -- ~/stl_dir/ --unix
 
 The dashes are important, it indicates to blender to ignore past there and let the python script handle that input instead.
