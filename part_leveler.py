@@ -19,8 +19,13 @@ else:
     print("Please choose a path style by appending --windows or --unix.")
     exit()
 
+if '--in_place' in argv:
+    in_place = True
+else:
+    in_place = False
+
 for filename in os.listdir(folder_name):
-    if filename.endswith(".stl"):
+    if filename.endswith(".stl") and 'leveled_' not in filename:
         counter += 1
         print("({} of {}) processing {}...".format(counter, len(os.listdir(folder_name)), filename))
         #for good measure, delete everything
@@ -37,6 +42,7 @@ for filename in os.listdir(folder_name):
 
         #import stl and assign properties
         file_path = folder_name + slash_style + filename
+        export_file_path = folder_name + slash_style + 'leveled_' + filename
         bpy.ops.import_mesh.stl(filepath = file_path)
         bpy.ops.object.origin_set(type='ORIGIN_CENTER_OF_VOLUME')
         bpy.context.object.location[0] = 0
@@ -51,7 +57,10 @@ for filename in os.listdir(folder_name):
         bpy.ops.ptcache.bake_all(bake=False)
 
         #export settled mesh in place
-        bpy.ops.export_mesh.stl(filepath = file_path, use_selection = True)
+        if not in_place:
+            bpy.ops.export_mesh.stl(filepath = export_file_path, use_selection = True)
+        else:
+            bpy.ops.export_mesh.stl(filepath = file_path, use_selection = True)
 
         #delete everything again in preparation for the next stl
         bpy.ops.object.select_all(action='SELECT')
