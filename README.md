@@ -18,6 +18,5 @@ The dashes are important. Past there, arguments are fed to the python script ins
 
 ![](ugly_but_functional.png)
 
-Let me know if this is useful for you. I originally figured out this process for ridiculously wasteful wax-support style printers that don't care if your part is touching the print bed. 
-
+Let me know if this is useful. I originally figured out this process for wax-support style printers that don't care if your part is touching the print bed. 
 
